@@ -73,3 +73,5 @@ echo "roscore"
 echo "\nTERMINAL 2:"
 echo "cd ~/catkin_ws/src && catkin source"
 echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboone_startup --symlink"
+### Restart:  sudo systemctl daemon-reload && sudo systemctl start roboone_startup
+### Disable: rosrun robot_upstart uninstall roboone_startup
