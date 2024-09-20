@@ -52,6 +52,7 @@ fi
 
 echo "----- Setting up KUROKO ROS Package -----"
 sudo apt install -y ros-noetic-catkin ros-noetic-rosbash python3-pip python3-catkin-tools python3-osrf-pycommon python3-vcstool python3-testresources
+sudo apt install -y ros-noetic-robot-upstart
 sudo pip3 install vcstool
 sudo pip3 install pipenv
 source ~/.bashrc
