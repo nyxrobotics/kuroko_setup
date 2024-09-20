@@ -1,5 +1,7 @@
 #!/bin/bash
 
+### Use jetpack 5.1.1: https://developer.nvidia.com/embedded/jetpack-sdk-511
+### Use "SD Card Image Method" and balenaEtcher
 echo "----- Setting up ROS1 Noetic -----"
 echo "reference: https://github.com/dnovischi/jetson-tutorials/blob/main/jetson-nano-ros-noetic-install.md"
 echo "1. First make sure you have gcc-10 and g++-10 activated:"
