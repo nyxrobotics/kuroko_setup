@@ -54,10 +54,12 @@ cd ~/catkin_ws/src
 git clone -b feature/roboone https://github.com/nyxrobotics/kuroko_ros.git
 bash kuroko_ros/install_dependency.sh
 bash kuroko_ros/kuroko_image_recognition/trained/download_roboone_model.sh
+sudo cp kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rules.d/
+sudo udevadm control --reload-rules && sudo udevadm trigger
 
-echo "----- SetUp Finished. Please Pair your Blietooth Gamepad with bluez -----"
-
-echo "----- Run commands below to enable startup -----"
+echo "----- SetUp Finished -----"
+echo "----- 1. Please Pair your Blietooth Gamepad with bluez -----"
+echo "----- 2. Run commands below to enable startup -----"
 echo "\nTERMINAL 1:"
 echo "roscore"
 echo "\nTERMINAL 2:"
