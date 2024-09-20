@@ -26,7 +26,7 @@ rosdep install --from-paths ./src --ignore-packages-from-source --rosdistro noet
 echo "7. Fix OpenCV dependency"
 sed -i 's/find_package(Boost REQUIRED python37)/find_package(Boost REQUIRED python3)/' ./src/vision_opencv/cv_bridge/CMakeLists.txt
 echo "8. Build"
-catkin build --install -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3 --install-space /opt/ros/noetic
+catkin build --install -DCMAKE_BUILD_TYPE=Release -DPYTHON_EXECUTABLE=/usr/bin/python3
 echo "9. Setup ROS environment"
 
 if ! grep -Fxq "## For ROS setup" ~/.bashrc
