@@ -63,6 +63,7 @@ bash src/kuroko_ros/install_dependency.sh
 # bash src/kuroko_ros/kuroko_image_recognition/trained/download_roboone_model.sh
 sudo cp src/kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && sudo udevadm trigger
+touch ~/catkin_ws/src/robotis/robotis_op3_tools/op3_action_editor/CATKIN_IGNORE
 
 echo "----- SetUp Finished -----"
 echo "----- 1. Please Pair your Bluetooth Gamepad with bluez -----"
