@@ -54,3 +54,10 @@ bash kuroko_ros/install_dependency.sh
 bash kuroko_ros/kuroko_image_recognition/trained/download_roboone_model.sh
 
 echo "----- SetUp Finished. Please Pair your Blietooth Gamepad with bluez -----"
+
+echo "----- Run commands below to enable startup -----"
+echo "\nTERMINAL 1:"
+echo "roscore"
+echo "\nTERMINAL 2:"
+echo "cd ~/catkin_ws/src && catkin source"
+echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboone_startup --symlink"
