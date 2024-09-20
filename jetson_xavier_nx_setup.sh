@@ -33,6 +33,7 @@ echo "9. Setup ROS environment"
 
 if ! grep -Fxq "## For ROS setup" ~/.bashrc
 then
+    echo -e "\n## For ROS setup"  >> ~/.bashrc
     echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
     echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
     echo "export LIBGL_ALWAYS_SOFTWARE=1" >> ~/.bashrc
@@ -58,7 +59,7 @@ sudo cp kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rul
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
 echo "----- SetUp Finished -----"
-echo "----- 1. Please Pair your Blietooth Gamepad with bluez -----"
+echo "----- 1. Please Pair your Bluetooth Gamepad with bluez -----"
 echo "----- 2. Run commands below to enable startup -----"
 echo "\nTERMINAL 1:"
 echo "roscore"
