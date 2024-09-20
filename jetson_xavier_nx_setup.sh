@@ -51,11 +51,16 @@ then
 fi
 
 echo "----- Setting up KUROKO ROS Package -----"
+sudo apt install -y ros-noetic-catkin ros-noetic-rosbash python3-pip python3-catkin-tools python3-osrf-pycommon python3-vcstool python3-testresources
+sudo pip3 install vcstool
+sudo pip3 install pipenv
+source ~/.bashrc
 cd ~/catkin_ws/src
 git clone -b feature/roboone https://github.com/nyxrobotics/kuroko_ros.git
-bash kuroko_ros/install_dependency.sh
-# bash kuroko_ros/kuroko_image_recognition/trained/download_roboone_model.sh
-sudo cp kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rules.d/
+cd ..
+bash src/kuroko_ros/install_dependency.sh
+# bash src/kuroko_ros/kuroko_image_recognition/trained/download_roboone_model.sh
+sudo cp src/kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && sudo udevadm trigger
 
 echo "----- SetUp Finished -----"
