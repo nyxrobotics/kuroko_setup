@@ -51,10 +51,12 @@ then
 fi
 
 echo "----- Setting up KUROKO ROS Package -----"
-sudo apt install -y ros-noetic-catkin ros-noetic-rosbash python3-pip python3-catkin-tools python3-osrf-pycommon python3-vcstool python3-testresources
+sudo apt install -y ros-noetic-catkin ros-noetic-rosbash ros-noetic-usb-cam ros-noetic-image-proc ros-noetic-imu-filter-madgwick ros-noetic-joy python3-pip python3-catkin-tools python3-osrf-pycommon python3-vcstool python3-testresources
 sudo apt install -y ros-noetic-robot-upstart
+pip3 install --upgrade setuptools importlib_metadata
 sudo pip3 install vcstool
-sudo pip3 install pipenv
+pip3 install pipenv
+pip3 install pipenv-shebang
 source ~/.bashrc
 cd ~/catkin_ws/src
 git clone -b feature/roboone https://github.com/nyxrobotics/kuroko_ros.git
@@ -64,6 +66,7 @@ bash src/kuroko_ros/install_dependency.sh
 sudo cp src/kuroko_ros/kuroko_bringup/udev/rules.d/99-kuroko-usb.rules /etc/udev/rules.d/
 sudo udevadm control --reload-rules && sudo udevadm trigger
 touch ~/catkin_ws/src/robotis/robotis_op3_tools/op3_action_editor/CATKIN_IGNORE
+sudo adduser $USER dialout
 
 echo "----- SetUp Finished -----"
 echo "----- 1. Please Pair your Bluetooth Gamepad with bluez -----"
@@ -72,6 +75,6 @@ echo "\nTERMINAL 1:"
 echo "roscore"
 echo "\nTERMINAL 2:"
 echo "cd ~/catkin_ws/src && catkin source"
-echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboone_startup --symlink"
-### Restart:  sudo systemctl daemon-reload && sudo systemctl start roboone_startup
-### Disable: rosrun robot_upstart uninstall roboone_startup
+echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboonestartup --symlink"
+### Restart: sudo systemctl daemon-reload && sudo systemctl start roboonestartup
+### Disable: rosrun robot_upstart uninstall roboonestartup
