@@ -75,6 +75,6 @@ echo "\nTERMINAL 1:"
 echo "roscore"
 echo "\nTERMINAL 2:"
 echo "cd ~/catkin_ws/src && catkin source"
-echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboonestartup --symlink"
+echo "rosrun robot_upstart install kuroko_bringup/launch/roboone_startup.launch --job roboonestartup --symlink --env LD_PRELOAD='/usr/lib/aarch64-linux-gnu/libgomp.so.1'"
 ### Restart: sudo systemctl daemon-reload && sudo systemctl start roboonestartup
 ### Disable: rosrun robot_upstart uninstall roboonestartup
