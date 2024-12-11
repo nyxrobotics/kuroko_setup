@@ -45,8 +45,9 @@ fi
 if ! grep -Fxq "## CUDA and cuDNN paths" ~/.bashrc
 then
     echo -e "\n## CUDA and cuDNN paths"  >> ~/.bashrc
-    echo 'export PATH=/usr/local/cuda-11.4/bin:${PATH}' >> ~/.bashrc
-    echo 'export LD_LIBRARY_PATH=/usr/local/cuda-11.4/lib64:${LD_LIBRARY_PATH}' >> ~/.bashrc
+    echo 'export CUDA_HOME=/usr/local/cuda-11.4' >> ~/.bashrc
+    echo 'export PATH=${CUDA_HOME}/bin:${PATH}' >> ~/.bashrc
+    echo 'LD_LIBRARY_PATH=${CUDA_HOME}/lib64:${LD_LIBRARY_PATH}' >> ~/.bashrc
     source ~/.bashrc # reload .bashrc with cuda path
 fi
 
